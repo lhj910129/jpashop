@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="hello">
+        <properties>
+            <!-- 필수 속성 -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="jakarta.persistence.jdbc.user" value="sa"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/jpashop"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+            <!-- 옵션 -->
+            <property name="hibernate.show_sql" value="true"/> <!-- 쿼리 표시 -->
+            <property name="hibernate.format_sql" value="true"/> <!-- 쿼리 포맷 -->
+            <property name="hibernate.use_sql_comments"  value="true"/> <!-- 쿼리가 나온 이유 주석으로 표시 -->
+            <property name="hibernate.jdbc.batch_size"  value="10"/>
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <!-- 이 속성은 애플리케이션 실행 시 데이터베이스 스키마를 자동으로 생성, 갱신, 검증 또는 삭제하는 방식을 제어합니다. 일반적으로 개발 초기에는 create나 update 값을 사용하지만, create는 애플리케이션을 재시작할 때마다 데이터베이스를 새로 생성하기 때문에 기존 데이터가 사라집니다. 이를 update로 변경하거나, 배포 환경에서는 이 속성을 사용하지 않는 편이 좋습니다. -->
+        </properties>
+    </persistence-unit>
+
+</persistence>
